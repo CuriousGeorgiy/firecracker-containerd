@@ -77,6 +77,7 @@ func TestBuildJailedRootHandler_Isolated(t *testing.T) {
 				PathOnHost:   firecracker.String(rootDrivePath),
 				IsRootDevice: firecracker.Bool(true),
 				IsReadOnly:   firecracker.Bool(true),
+				CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 			},
 		},
 	}

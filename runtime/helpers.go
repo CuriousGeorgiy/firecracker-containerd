@@ -146,6 +146,18 @@ func withRateLimiterFromProto(rl *proto.FirecrackerRateLimiter) firecracker.Driv
 	return firecracker.WithRateLimiter(*rateLimiterFromProto(rl))
 }
 
+// withCacheType specifies a drive's cache_type during creation.
+func withCacheType(cacheType string) firecracker.DriveOpt {
+	if cacheType == "" {
+		return func(_ *models.Drive) {
+			// no-op
+		}
+	}
+	return func(d *models.Drive) {
+		d.CacheType = firecracker.String(cacheType)
+	}
+}
+
 // tokenBucketFromProto creates a firecracker TokenBucket object from the
 // protobuf message.
 func tokenBucketFromProto(bucket *proto.FirecrackerTokenBucket) *models.TokenBucket {

@@ -72,6 +72,7 @@ func CreateContainerStubs(
 			IsReadOnly:   firecracker.Bool(!isWritable),
 			RateLimiter:  rateLimiterFromProto(rateLimiter),
 			IsRootDevice: firecracker.Bool(false),
+			CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 		})
 		containerStubs = append(containerStubs, stubDrive)
 	}
@@ -204,6 +205,7 @@ func CreateDriveMountStubs(
 			IsReadOnly:   firecracker.Bool(!isWritable),
 			RateLimiter:  rateLimiterFromProto(rateLimiter),
 			IsRootDevice: firecracker.Bool(false),
+			CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 		})
 		containerStubs[i] = stubDrive.withMountConfig(
 			driveMount.HostPath,

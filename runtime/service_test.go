@@ -68,6 +68,7 @@ func TestBuildVMConfiguration(t *testing.T) {
 						PathOnHost:   firecracker.String("ROOT DRIVE"),
 						IsReadOnly:   firecracker.Bool(true),
 						IsRootDevice: firecracker.Bool(true),
+						CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 					},
 				},
 				MachineCfg: models.MachineConfiguration{
@@ -105,6 +106,7 @@ func TestBuildVMConfiguration(t *testing.T) {
 						PathOnHost:   firecracker.String("REQUEST ROOT DRIVE"),
 						IsReadOnly:   firecracker.Bool(false),
 						IsRootDevice: firecracker.Bool(true),
+						CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 					},
 				},
 				MachineCfg: models.MachineConfiguration{
@@ -145,6 +147,7 @@ func TestBuildVMConfiguration(t *testing.T) {
 						PathOnHost:   firecracker.String("REQUEST ROOT DRIVE"),
 						IsReadOnly:   firecracker.Bool(false),
 						IsRootDevice: firecracker.Bool(true),
+						CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 					},
 				},
 				MachineCfg: models.MachineConfiguration{
@@ -181,6 +184,7 @@ func TestBuildVMConfiguration(t *testing.T) {
 						PathOnHost:   firecracker.String("REQUEST ROOT DRIVE"),
 						IsReadOnly:   firecracker.Bool(true),
 						IsRootDevice: firecracker.Bool(true),
+						CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 					},
 				},
 				MachineCfg: models.MachineConfiguration{
@@ -211,6 +215,7 @@ func TestBuildVMConfiguration(t *testing.T) {
 						PathOnHost:   firecracker.String("ROOT DRIVE"),
 						IsReadOnly:   firecracker.Bool(true),
 						IsRootDevice: firecracker.Bool(true),
+						CacheType:    firecracker.String(models.DriveCacheTypeWriteback),
 					},
 				},
 				MachineCfg: models.MachineConfiguration{
@@ -260,6 +265,7 @@ func TestBuildVMConfiguration(t *testing.T) {
 				drives[i].DriveID = firecracker.String(stubPathToDriveID(hostPath))
 				drives[i].IsReadOnly = firecracker.Bool(false)
 				drives[i].IsRootDevice = firecracker.Bool(false)
+				drives[i].CacheType = firecracker.String(models.DriveCacheTypeWriteback)
 			}
 			tc.expectedCfg.Drives = append(tc.expectedCfg.Drives, drives...)
 
