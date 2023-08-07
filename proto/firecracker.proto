@@ -41,6 +41,13 @@ message CreateVMRequest {
     string MetricsFifoPath = 13;
 
     FirecrackerBalloonDevice BalloonDevice = 14;
+
+    string NetNS = 15;
+
+    bool LoadSnapshot = 16;
+    string MemFilePath = 17;
+    string SnapshotPath = 18;
+    string DiskDevicePath = 19;
 }
 
 message CreateVMResponse {
@@ -57,6 +64,12 @@ message PauseVMRequest {
 
 message ResumeVMRequest {
     string VMID = 1;
+}
+
+message CreateSnapshotRequest {
+    string VMID = 1;
+    string MemFilePath = 2;
+    string SnapshotPath = 3;
 }
 
 message StopVMRequest {
