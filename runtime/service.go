@@ -593,7 +593,7 @@ func (s *service) createVM(requestCtx context.Context, request *proto.CreateVMRe
 		if request.SnapshotPath == "" || request.MemFilePath == "" || request.DiskDevicePath == "" {
 			return errors.New("failed to load snapshot: one of the snapshot loading parameters was not provided")
 		}
-		opts = append(opts, firecracker.WithSnapshot(request.MemFilePath, request.SnapshotPath, request.DiskDevicePath,
+		opts = append(opts, firecracker.WithSnapshot(request.MemFilePath, request.SnapshotPath,
 			func(c *firecracker.SnapshotConfig) { c.ResumeVM = true }))
 	}
 

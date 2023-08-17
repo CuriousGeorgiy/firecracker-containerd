@@ -2,7 +2,7 @@ module github.com/firecracker-microvm/firecracker-containerd
 
 go 1.17
 
-replace github.com/firecracker-microvm/firecracker-go-sdk => github.com/curiousgeorgiy/firecracker-go-sdk v1.0.1-0.20230808115354-3332590b0989
+replace github.com/firecracker-microvm/firecracker-go-sdk => github.com/curiousgeorgiy/firecracker-go-sdk v1.0.1-0.20230808115354-a2ec2c921c4a
 
 require (
 	github.com/awslabs/tc-redirect-tap v0.0.0-20211025175357-e30dfca224c2
@@ -14,7 +14,7 @@ require (
 	github.com/containerd/typeurl v1.0.2
 	github.com/containernetworking/cni v1.1.2
 	github.com/containernetworking/plugins v1.1.1
-	github.com/firecracker-microvm/firecracker-go-sdk v0.22.1-0.20220427214706-47505a9cf951
+	github.com/firecracker-microvm/firecracker-go-sdk v1.0.0
 	github.com/gofrs/uuid v3.3.0+incompatible
 	github.com/gogo/protobuf v1.3.2
 	github.com/hashicorp/go-multierror v1.1.1
