@@ -2,7 +2,7 @@ module github.com/firecracker-microvm/firecracker-containerd
 
 go 1.17
 
-replace github.com/firecracker-microvm/firecracker-go-sdk => github.com/curiousgeorgiy/firecracker-go-sdk v1.0.1-0.20230808115354-a2ec2c921c4a
+replace github.com/firecracker-microvm/firecracker-go-sdk => github.com/curiousgeorgiy/firecracker-go-sdk v1.0.1-0.20230818152239-de7dc23e75c5
 
 require (
 	github.com/awslabs/tc-redirect-tap v0.0.0-20211025175357-e30dfca224c2
